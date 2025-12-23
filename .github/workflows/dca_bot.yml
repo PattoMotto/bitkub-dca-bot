@@ -1,0 +1,63 @@
+name: DCA Bot
+
+on:
+  # -------------------------------------------------------
+  # SCHEDULE: Uncomment ONE of the lines below to choose frequency
+  # -------------------------------------------------------
+  schedule:
+    # OPTION 1: DAILY at 09:00 AM Bangkok Time (02:00 UTC) <-- CURRENT
+    # - cron: '0 2 * * *'
+
+    # OPTION 2: WEEKLY on Monday at 09:00 AM BKK
+    # - cron: '0 2 * * 1'
+
+    # OPTION 3: HOURLY (At the top of every hour)
+    # - cron: '0 * * * *'
+
+    # OPTION 4: EVERY 12 HOURS (09:00 AM and 09:00 PM BKK)
+    # - cron: '0 2,14 * * *'
+
+    # OPTION 5: EVERY 10 MINUTES
+    - cron: '*/10 * * * *'
+
+  # -------------------------------------------------------
+  # MANUAL TRIGGER: Allows you to run this on demand
+  # -------------------------------------------------------
+  workflow_dispatch:
+    inputs:
+      manual_amount:
+        description: 'Amount to Buy (THB)'
+        required: false
+        default: '500'
+      manual_symbol:
+        description: 'Crypto Pair (e.g., btc_thb)'
+        required: false
+        default: 'btc_thb'
+
+jobs:
+  trade:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: pip install requests
+
+      - name: Run Trading Bot
+        env:
+          BITKUB_API_KEY: ${{ secrets.BITKUB_API_KEY }}
+          BITKUB_API_SECRET: ${{ secrets.BITKUB_API_SECRET }}
+          
+          # LOGIC: Use Manual Input if provided, otherwise use Default '500'
+          BUY_AMOUNT: ${{ github.event.inputs.manual_amount || '500' }}
+          
+          # LOGIC: Use Manual Input if provided, otherwise use Default 'btc_thb'
+          SYMBOL: ${{ github.event.inputs.manual_symbol || 'btc_thb' }}
+        
+        run: python main.py
