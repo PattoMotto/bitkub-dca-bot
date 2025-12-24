@@ -1,5 +1,7 @@
 # 🤖 Bitkub DCA Bot
 
+> **[🇹🇭 อ่านภาษาไทย](README_TH.md) | [🇬🇧 Read in English](README.md)**
+
 > **Automate your crypto accumulation with precision and ease.**
 
 Checking the charts every day is exhausting. The **Bitkub DCA Bot** is a lightweight, robust Python tool designed to automate your Dollar-Cost Averaging (DCA) strategy on the [Bitkub Exchange](https://www.bitkub.com/). whether you're stacking sats or accumulating your favorite altcoins, this bot ensures you stay consistent without the emotional stress of manual trading.
@@ -16,6 +18,9 @@ Checking the charts every day is exhausting. The **Bitkub DCA Bot** is a lightwe
 
 - Python 3.6+
 - A [Bitkub Account](https://www.bitkub.com/) with API access enabled.
+- **For GitHub Actions (Recommended):**
+  - **Environment Rules**: Configure `production` environment in Settings > Environments.
+  - **Action Activation**: Enable "Allow all actions" in Settings > Actions > General.
 
 ## 📦 Installation
 
@@ -100,6 +105,10 @@ You can manually trigger the bot to make an immediate purchase with custom param
 3. Click **Run workflow**.
 4. (Optional) Enter a custom `Amount to Buy` (default: 108) and `Crypto Pair` (default: BTC_THB).
 5. Click **Run workflow**.
+
+### 4. Important Setup Reminders ⚠️
+- **Environment Rules**: Ensure your `production` environment is properly configured in Settings > Environments. If your repository is private, you may need to enable environments.
+- **Action Activation**: Go to **Settings > Actions > General** and ensure "Allow all actions and reusable workflows" is selected to enable the bot to run.
 
 ## ⚠️ Disclaimer
 
