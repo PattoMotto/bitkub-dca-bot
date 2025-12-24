@@ -85,10 +85,8 @@ def buy_crypto():
         if response.status_code == 200 and response_json.get('error') == 0:
             result = response_json.get('result', {})
             print("✅ SUCCESS!")
-            print(f"   Order ID: {result.get('id')}")
-            print(f"   Price: {result.get('rat', 'N/A')}")
-            print(f"   Amount: {result.get('rec', 'N/A')}")
-            print(f"   Fee: {result.get('cre', 'N/A')}")
+            print(f"   Order ID: {result.get('id', 'N/A')}")
+            print(f"   Spend Amount: {result.get('amt', 'N/A')}")
             print(f"   Full Response: {response.text}")
         else:
             print("❌ FAILED")
