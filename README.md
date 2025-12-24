@@ -85,12 +85,15 @@ When successful, the bot provides a clear summary of the transaction:
 
 This bot is pre-configured with a powerful GitHub Actions workflow (`.github/workflows/dca_bot.yml`) that supports both automated scheduling and manual triggers.
 
-### 1. Setup Secrets & Environment
+### 1. Fork this Repository
+Click the **Fork** button via the top right of this page to create your own copy of this repository.
+
+### 2. Setup Secrets & Environment
 1. Go to your repository **Settings** > **Environments**.
 2. Create a new environment named `production`.
 3. Add your `API_KEY` and `API_SECRET` as **Environment Secrets** within the `production` environment.
 
-### 2. Schedule Options
+### 3. Schedule Options
 By default, the bot runs **Daily**. You can customize this by uncommenting your preferred schedule in `.github/workflows/dca_bot.yml`:
 
 - **Daily**: `0 2 * * *` (09:00 AM Bangkok Time) <-- **Default**
@@ -98,7 +101,7 @@ By default, the bot runs **Daily**. You can customize this by uncommenting your 
 - **Hourly**: `0 * * * *`
 - **Every 12 Hours**: `0 2,14 * * *`
 
-### 3. Manual Trigger (Run on Demand)
+### 4. Manual Trigger (Run on Demand)
 You can manually trigger the bot to make an immediate purchase with custom parameters:
 1. Go to the **Actions** tab in your repository.
 2. Select **DCA Bot** from the left sidebar.
@@ -106,7 +109,7 @@ You can manually trigger the bot to make an immediate purchase with custom param
 4. (Optional) Enter a custom `Amount to Buy` (default: 108) and `Crypto Pair` (default: BTC_THB).
 5. Click **Run workflow**.
 
-### 4. Important Setup Reminders ⚠️
+### 5. Important Setup Reminders ⚠️
 - **Environment Rules**: Ensure your `production` environment is properly configured in Settings > Environments. If your repository is private, you may need to enable environments.
 - **Action Activation**: Go to **Settings > Actions > General** and ensure "Allow all actions and reusable workflows" is selected to enable the bot to run.
 
@@ -115,4 +118,4 @@ You can manually trigger the bot to make an immediate purchase with custom param
 This software is for educational purposes only. Automated trading carries risks. Ensure you test with small amounts and understand the code before using significant funds. The authors are not responsible for any financial losses.
 
 ---
-*Maintained by PattoMotto*
+*Maintained by @PattoMotto*

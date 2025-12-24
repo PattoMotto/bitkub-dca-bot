@@ -85,12 +85,15 @@ python main.py
 
 บอทนี้ถูกตั้งค่ามาพร้อมกับ GitHub Actions workflow (`.github/workflows/dca_bot.yml`) ที่รองรับทั้งการตั้งเวลาอัตโนมัติและการกดสั่งงานด้วยตัวเอง
 
-### 1. ตั้งค่า Secrets & Environment
+### 1. Fork Repository
+คลิกปุ่ม **Fork** ที่มุมขวาบนของหน้านี้ เพื่อคัดลอก repository ไปเป็นของคุณเอง
+
+### 2. ตั้งค่า Secrets & Environment
 1. ไปที่เมนู **Settings** > **Environments** ของ repository
 2. สร้าง environment ใหม่ชื่อ `production`
 3. เพิ่ม `API_KEY` และ `API_SECRET` ใน **Environment Secrets** ภายใต้ `production` environment
 
-### 2. ตัวเลือกการตั้งเวลา (Schedule Options)
+### 3. ตัวเลือกการตั้งเวลา (Schedule Options)
 โดยปกติ บอทจะทำงาน **ทุกวัน** (Daily) คุณสามารถเปลี่ยนการตั้งค่านี้โดยการ uncomment บรรทัดที่ต้องการในไฟล์ `.github/workflows/dca_bot.yml`:
 
 - **รายวัน (Daily)**: `0 2 * * *` (09:00 น. เวลาไทย) <-- **ค่าเริ่มต้น**
@@ -98,7 +101,7 @@ python main.py
 - **รายชั่วโมง (Hourly)**: `0 * * * *`
 - **ทุก 12 ชั่วโมง**: `0 2,14 * * *`
 
-### 3. การสั่งงานด้วยตัวเอง (Manual Trigger)
+### 4. การสั่งงานด้วยตัวเอง (Manual Trigger)
 คุณสามารถสั่งให้บอททำงานทันทีด้วยการกำหนดค่าเอง:
 1. ไปที่แท็บ **Actions** ใน repository
 2. เลือก **DCA Bot** จากเมนูซ้ายมือ
@@ -106,7 +109,7 @@ python main.py
 4. (ทางเลือก) ระบุจำนวนเงินม `Amount to Buy` (ค่าเริ่มต้น: 108) และ `Crypto Pair` (ค่าเริ่มต้น: BTC_THB)
 5. คลิก **Run workflow**
 
-### 4. ข้อควรจำสำหรับการตั้งค่า ⚠️
+### 5. ข้อควรจำสำหรับการตั้งค่า ⚠️
 - **กฎ Environment**: ตรวจสอบให้แน่ใจว่า environment `production` ถูกตั้งค่าอย่างถูกต้องใน Settings > Environments (หากเป็น Private repo อาจต้องเปิดใช้งาน environment ก่อน)
 - **การเปิดใช้งาน Action**: ไปที่ **Settings > Actions > General** และเลือก "Allow all actions and reusable workflows" เพื่อให้บอทสามารถทำงานได้
 
@@ -115,4 +118,4 @@ python main.py
 ซอฟต์แวร์นี้จัดทำขึ้นเพื่อการศึกษาเท่านั้น การเทรดด้วยระบบอัตโนมัติมีความเสี่ยง โปรดมั่นใจว่าคุณได้ทดสอบด้วยจำนวนเงินน้อยๆ และทำความเข้าใจโค้ดก่อนที่จะเริ่มใช้งานจริง ผู้เขียนโปรแกรมไม่รับผิดชอบต่อความสูญเสียทางการเงินใดๆ ที่เกิดขึ้น
 
 ---
-*Maintained by PattoMotto*
+*Maintained by @PattoMotto*
