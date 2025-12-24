@@ -106,7 +106,7 @@ python main.py
 🚀 Buying 108.0 THB of BTC_THB...
 ✅ SUCCESS!
    Order ID: 12345678
-   Spend Amount: 108.0
+   Spend Amount: 108
    Full Response: {...}
 ```
 
