@@ -86,7 +86,10 @@ def buy_crypto():
             result = response_json.get('result', {})
             print("✅ SUCCESS!")
             print(f"   Order ID: {result.get('id')}")
-            print(f"   Credit Used: {result.get('spend')}")
+            print(f"   Price: {result.get('rat', 'N/A')}")
+            print(f"   Amount: {result.get('rec', 'N/A')}")
+            print(f"   Fee: {result.get('cre', 'N/A')}")
+            print(f"   Full Response: {response.text}")
         else:
             print("❌ FAILED")
             print(f"   Status Code: {response.status_code}")
