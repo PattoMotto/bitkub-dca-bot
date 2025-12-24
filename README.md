@@ -107,8 +107,19 @@ When successful, the bot provides a clear summary of the transaction:
 🚀 Buying 108.0 THB of BTC_THB...
 ✅ SUCCESS!
    Order ID: 12345678
-   Credit Used: 108.0
+   Spend Amount: 108.0
+   Full Response: {...}
 ```
+
+## 🧪 Testing
+
+You can verify the bot's logic and logging without making real API calls using the included test script:
+
+```bash
+python test_main.py
+```
+
+This runs a simulated buy order scenario and validates the output format.
 
 
 
