@@ -18,9 +18,38 @@ Checking the charts every day is exhausting. The **Bitkub DCA Bot** is a lightwe
 
 - Python 3.6+
 - A [Bitkub Account](https://www.bitkub.com/) with API access enabled.
-- **For GitHub Actions (Recommended):**
-  - **Environment Rules**: Configure `production` environment in Settings > Environments.
-  - **Action Activation**: Enable "Allow all actions" in Settings > Actions > General.
+
+## 🤖 Automating with GitHub Actions (Recommended)
+
+This bot is pre-configured with a powerful GitHub Actions workflow (`.github/workflows/dca_bot.yml`) that supports both automated scheduling and manual triggers.
+
+### 1. Fork this Repository
+Click the **Fork** button via the top right of this page to create your own copy of this repository.
+
+### 2. Setup Secrets & Environment
+1. Go to your repository **Settings** > **Environments**.
+2. Create a new environment named `production`.
+3. Add your `API_KEY` and `API_SECRET` as **Environment Secrets** within the `production` environment.
+
+### 3. Schedule Options
+By default, the bot runs **Daily**. You can customize this by uncommenting your preferred schedule in `.github/workflows/dca_bot.yml`:
+
+- **Daily**: `0 2 * * *` (09:00 AM Bangkok Time) <-- **Default**
+- **Weekly**: `0 2 * * 1` (Monday at 09:00 AM)
+- **Hourly**: `0 * * * *`
+- **Every 12 Hours**: `0 2,14 * * *`
+
+### 4. Manual Trigger (Run on Demand)
+You can manually trigger the bot to make an immediate purchase with custom parameters:
+1. Go to the **Actions** tab in your repository.
+2. Select **DCA Bot** from the left sidebar.
+3. Click **Run workflow**.
+4. (Optional) Enter a custom `Amount to Buy` (default: 108) and `Crypto Pair` (default: BTC_THB).
+5. Click **Run workflow**.
+
+### 5. Important Setup Reminders ⚠️
+- **Environment Rules**: Ensure your `production` environment is properly configured in Settings > Environments. If your repository is private, you may need to enable environments.
+- **Action Activation**: Go to **Settings > Actions > General** and ensure "Allow all actions and reusable workflows" is selected to enable the bot to run.
 
 ## 📦 Installation
 
@@ -81,37 +110,7 @@ When successful, the bot provides a clear summary of the transaction:
    Credit Used: 108.0
 ```
 
-## 🤖 Automating with GitHub Actions (Recommended)
 
-This bot is pre-configured with a powerful GitHub Actions workflow (`.github/workflows/dca_bot.yml`) that supports both automated scheduling and manual triggers.
-
-### 1. Fork this Repository
-Click the **Fork** button via the top right of this page to create your own copy of this repository.
-
-### 2. Setup Secrets & Environment
-1. Go to your repository **Settings** > **Environments**.
-2. Create a new environment named `production`.
-3. Add your `API_KEY` and `API_SECRET` as **Environment Secrets** within the `production` environment.
-
-### 3. Schedule Options
-By default, the bot runs **Daily**. You can customize this by uncommenting your preferred schedule in `.github/workflows/dca_bot.yml`:
-
-- **Daily**: `0 2 * * *` (09:00 AM Bangkok Time) <-- **Default**
-- **Weekly**: `0 2 * * 1` (Monday at 09:00 AM)
-- **Hourly**: `0 * * * *`
-- **Every 12 Hours**: `0 2,14 * * *`
-
-### 4. Manual Trigger (Run on Demand)
-You can manually trigger the bot to make an immediate purchase with custom parameters:
-1. Go to the **Actions** tab in your repository.
-2. Select **DCA Bot** from the left sidebar.
-3. Click **Run workflow**.
-4. (Optional) Enter a custom `Amount to Buy` (default: 108) and `Crypto Pair` (default: BTC_THB).
-5. Click **Run workflow**.
-
-### 5. Important Setup Reminders ⚠️
-- **Environment Rules**: Ensure your `production` environment is properly configured in Settings > Environments. If your repository is private, you may need to enable environments.
-- **Action Activation**: Go to **Settings > Actions > General** and ensure "Allow all actions and reusable workflows" is selected to enable the bot to run.
 
 ## ⚠️ Disclaimer
 
