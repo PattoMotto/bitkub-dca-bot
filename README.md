@@ -19,6 +19,17 @@ Checking the charts every day is exhausting. The **Bitkub DCA Bot** is a lightwe
 - Python 3.6+
 - A [Bitkub Account](https://www.bitkub.com/) with API access enabled.
 
+## ⚙️ Configuration
+
+The bot is configured entirely through **Environment Variables**, making it secure and easy to deploy anywhere.
+
+| Variable | Description | Default | Required |
+|----------|-------------|---------|----------|
+| `API_KEY` | Your Bitkub API Public Key | - | **Yes** |
+| `API_SECRET` | Your Bitkub API Secret Key | - | **Yes** |
+| `BUY_AMOUNT` | The amount of THB to spend per transaction | `108` | No |
+| `SYMBOL` | The trading pair to buy (e.g., `ETH_THB`) | `BTC_THB` | No |
+
 ## 🤖 Automating with GitHub Actions (Recommended)
 
 This bot is pre-configured with a powerful GitHub Actions workflow (`.github/workflows/dca_bot.yml`) that supports both automated scheduling and manual triggers.
@@ -64,16 +75,7 @@ You can manually trigger the bot to make an immediate purchase with custom param
    pip install requests
    ```
 
-## ⚙️ Configuration
 
-The bot is configured entirely through **Environment Variables**, making it secure and easy to deploy anywhere.
-
-| Variable | Description | Default | Required |
-|----------|-------------|---------|----------|
-| `API_KEY` | Your Bitkub API Public Key | - | **Yes** |
-| `API_SECRET` | Your Bitkub API Secret Key | - | **Yes** |
-| `BUY_AMOUNT` | The amount of THB to spend per transaction | `108` | No |
-| `SYMBOL` | The trading pair to buy (e.g., `ETH_THB`) | `BTC_THB` | No |
 
 ## 🚀 Usage
 
