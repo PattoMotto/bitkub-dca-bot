@@ -1,6 +1,7 @@
 # 🤖 Bitkub DCA Bot
 
 > **[🇹🇭 อ่านภาษาไทย](README_TH.md) | [🇬🇧 Read in English](README.md)**
+> **[🎥 Watch Setup Guide](https://youtu.be/9TbMAWm_qIk)**
 
 > **Automate your crypto accumulation with precision and ease.**
 
