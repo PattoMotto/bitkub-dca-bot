@@ -24,15 +24,6 @@ on:
   # MANUAL TRIGGER: Allows you to run this on demand
   # -------------------------------------------------------
   workflow_dispatch:
-    inputs:
-      manual_amount:
-        description: 'Amount to Buy (THB)'
-        required: false
-        default: '108'
-      manual_symbol:
-        description: 'Crypto Pair (e.g., BTC_THB)'
-        required: false
-        default: 'BTC_THB'
 
 jobs:
   trade:
@@ -55,10 +46,10 @@ jobs:
           API_KEY: ${{ secrets.API_KEY }}
           API_SECRET: ${{ secrets.API_SECRET }}
           
-          # LOGIC: Use Manual Input if provided, otherwise use Repo Variable, otherwise use Default '108'
-          BUY_AMOUNT: ${{ github.event.inputs.manual_amount || vars.BUY_AMOUNT || '108' }}
+          # LOGIC: Use Repo Variable, otherwise use Default '108'
+          BUY_AMOUNT: ${{ vars.BUY_AMOUNT || '108' }}
           
-          # LOGIC: Use Manual Input if provided, otherwise use Repo Variable, otherwise use Default 'BTC_THB'
-          SYMBOL: ${{ github.event.inputs.manual_symbol || vars.SYMBOL || 'BTC_THB' }}
+          # LOGIC: Use Repo Variable, otherwise use Default 'BTC_THB'
+          SYMBOL: ${{ vars.SYMBOL || 'BTC_THB' }}
         
         run: python main.py
