@@ -1,5 +1,7 @@
 # 🤖 Bitkub DCA Bot
 
+[![DCA Bot](https://github.com/PattoMotto/bitkub-dca-bot/actions/workflows/dca_bot.yml/badge.svg)](https://github.com/PattoMotto/bitkub-dca-bot/actions/workflows/dca_bot.yml)
+
 > **[🇹🇭 อ่านภาษาไทย](README_TH.md) | [🇬🇧 Read in English](README.md)**
 > **[🎥 ดูวิดีโอสอนการใช้งาน](https://youtu.be/9TbMAWm_qIk)**
 
